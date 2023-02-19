@@ -1,0 +1,21 @@
+let each = require("./each.js")
+
+function map(elements, cb) {
+    let ans = [];
+    for (index = 0; index < elements.length; index++) {
+        ans.push(cb(elements[index]));
+    }
+    return ans;
+}
+
+let items = [1, 2, 3, 4, 5, 5];
+
+let ans = map(items, (item) => {
+    return item * item;
+});
+
+each(ans, (x) => {
+    console.log(x);
+});
+
+module.exports = map;
